@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="net.hu.client.controllers.LoginController">
+
+    <Button fx:id="registerBtn" layoutX="83.0" layoutY="288.0" mnemonicParsing="false" text="Register"/>
+    <Button fx:id="loginBtn" layoutX="383.0" layoutY="288.0" mnemonicParsing="false" text="Login"/>
+    <Label layoutX="80.0" layoutY="106.0" text="Username"/>
+    <TextField layoutX="250.0" layoutY="101.0"/>
+    <Label layoutX="82.0" layoutY="180.0" text="Password"/>
+    <TextField layoutX="250.0" layoutY="180.0"/>
+    <Label fx:id="passText" layoutX="261.0" layoutY="180.0" prefHeight="21.0" prefWidth="187.0"/>
+
+</AnchorPane>
