@@ -6,7 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.tempuri.IRegisterService;
+import org.tempuri.RegisterService;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,14 +27,40 @@ public class RegisterController {
     @FXML
     private Label passText;
 
+    @FXML
+    private Label errorText;
+
+    @FXML
+    private TextField nameBox;
+
+    private final IRegisterService registerService;
+
     public RegisterController() {
+        registerService = new RegisterService().getBasicHttpBindingIRegisterService();
 
     }
 
     public void initialize() {
-        //TODO register button action
-        registerBtn.setOnAction(event -> {
+        passText.setText(registerService.generatePassword());
 
+        registerBtn.setOnAction(event -> {
+            String username = nameBox.getText();
+            if (username.length() <= 0) {
+                errorText.setText("Insert a username");
+                return;
+            }
+            if (registerService.accountExists(username)) {
+                errorText.setText("Invalid username");
+                return;
+            }
+            String password = passText.getText();
+            if (password == null || password.length() <= 0) {
+                errorText.setText("Invalid password");
+                return;
+            }
+
+            registerService.register(username, password);
+            errorText.setText("User created!");
         });
 
         loginBtn.setOnAction(event -> {
