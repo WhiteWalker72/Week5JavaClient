@@ -14,8 +14,8 @@
        <Label layoutX="80.0" layoutY="106.0" text="Username" />
        <TextField fx:id="nameField" layoutX="250.0" layoutY="101.0" />
        <Label layoutX="82.0" layoutY="180.0" text="Password" />
-       <TextField fx:id="passField" layoutX="250.0" layoutY="180.0" />
        <Label fx:id="errorText" layoutX="250.0" layoutY="225.0" textFill="#fc0202" />
+      <PasswordField fx:id="passField" layoutX="250.0" layoutY="175.0" />
    </children>
 
 </AnchorPane>
