@@ -12,7 +12,7 @@
        <Button fx:id="loginBtn" layoutX="83.0" layoutY="288.0" mnemonicParsing="false" text="To Login" />
        <Button fx:id="registerBtn" layoutX="383.0" layoutY="288.0" mnemonicParsing="false" text="Register" />
        <Label layoutX="88.0" layoutY="106.0" text="Username" />
-       <TextField fx:id="nameBox" layoutX="250.0" layoutY="101.0" />
+       <TextField fx:id="nameField" layoutX="250.0" layoutY="101.0" />
        <Label layoutX="82.0" layoutY="180.0" text="Your new password:" />
        <Label fx:id="passText" layoutX="261.0" layoutY="180.0" prefHeight="21.0" prefWidth="187.0" />
       <Label fx:id="errorText" layoutX="250.0" layoutY="141.0" textFill="RED" />

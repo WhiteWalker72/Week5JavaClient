@@ -24,9 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _RegisterPassword_QNAME = new QName("http://tempuri.org/", "password");
-    private final static QName _RegisterUsername_QNAME = new QName("http://tempuri.org/", "username");
-    private final static QName _GeneratePasswordResponseGeneratePasswordResult_QNAME = new QName("http://tempuri.org/", "GeneratePasswordResult");
+    private final static QName _AuthenticatePassword_QNAME = new QName("http://tempuri.org/", "password");
+    private final static QName _AuthenticateUsername_QNAME = new QName("http://tempuri.org/", "username");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.tempuri
@@ -36,87 +35,37 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RegisterResponse }
+     * Create an instance of {@link AuthenticateResponse }
      * 
      */
-    public RegisterResponse createRegisterResponse() {
-        return new RegisterResponse();
+    public AuthenticateResponse createAuthenticateResponse() {
+        return new AuthenticateResponse();
     }
 
     /**
-     * Create an instance of {@link GeneratePassword }
+     * Create an instance of {@link Authenticate }
      * 
      */
-    public GeneratePassword createGeneratePassword() {
-        return new GeneratePassword();
-    }
-
-    /**
-     * Create an instance of {@link GeneratePasswordResponse }
-     * 
-     */
-    public GeneratePasswordResponse createGeneratePasswordResponse() {
-        return new GeneratePasswordResponse();
-    }
-
-    /**
-     * Create an instance of {@link Register }
-     * 
-     */
-    public Register createRegister() {
-        return new Register();
-    }
-
-    /**
-     * Create an instance of {@link AccountExistsResponse }
-     * 
-     */
-    public AccountExistsResponse createAccountExistsResponse() {
-        return new AccountExistsResponse();
-    }
-
-    /**
-     * Create an instance of {@link AccountExists }
-     * 
-     */
-    public AccountExists createAccountExists() {
-        return new AccountExists();
+    public Authenticate createAuthenticate() {
+        return new Authenticate();
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "password", scope = Register.class)
-    public JAXBElement<String> createRegisterPassword(String value) {
-        return new JAXBElement<String>(_RegisterPassword_QNAME, String.class, Register.class, value);
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "password", scope = Authenticate.class)
+    public JAXBElement<String> createAuthenticatePassword(String value) {
+        return new JAXBElement<String>(_AuthenticatePassword_QNAME, String.class, Authenticate.class, value);
     }
 
     /**
      * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "username", scope = Register.class)
-    public JAXBElement<String> createRegisterUsername(String value) {
-        return new JAXBElement<String>(_RegisterUsername_QNAME, String.class, Register.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "GeneratePasswordResult", scope = GeneratePasswordResponse.class)
-    public JAXBElement<String> createGeneratePasswordResponseGeneratePasswordResult(String value) {
-        return new JAXBElement<String>(_GeneratePasswordResponseGeneratePasswordResult_QNAME, String.class, GeneratePasswordResponse.class, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link String }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://tempuri.org/", name = "username", scope = AccountExists.class)
-    public JAXBElement<String> createAccountExistsUsername(String value) {
-        return new JAXBElement<String>(_RegisterUsername_QNAME, String.class, AccountExists.class, value);
+    @XmlElementDecl(namespace = "http://tempuri.org/", name = "username", scope = Authenticate.class)
+    public JAXBElement<String> createAuthenticateUsername(String value) {
+        return new JAXBElement<String>(_AuthenticateUsername_QNAME, String.class, Authenticate.class, value);
     }
 
 }

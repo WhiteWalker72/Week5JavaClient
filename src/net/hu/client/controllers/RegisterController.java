@@ -31,7 +31,7 @@ public class RegisterController {
     private Label errorText;
 
     @FXML
-    private TextField nameBox;
+    private TextField nameField;
 
     private final IRegisterService registerService;
 
@@ -44,7 +44,7 @@ public class RegisterController {
         passText.setText(registerService.generatePassword());
 
         registerBtn.setOnAction(event -> {
-            String username = nameBox.getText();
+            String username = nameField.getText();
             if (username.length() <= 0) {
                 errorText.setText("Insert a username");
                 return;
