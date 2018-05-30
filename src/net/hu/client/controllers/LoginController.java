@@ -8,8 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.tempuri.ILoginService;
-import org.tempuri.LoginService;
+import soap.login.ILoginService;
+import soap.login.LoginService;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,7 +39,6 @@ public class LoginController {
     }
 
     public void initialize() {
-        //TODO: login button action
         loginBtn.setOnAction(event -> {
             String username = nameField.getText();
             String password = passField.getText();
@@ -55,7 +54,10 @@ public class LoginController {
 
             try {
                 URL url = new File("src/net/hu/client/store.fxml").toURI().toURL();
-                Parent root = FXMLLoader.load(url);
+                FXMLLoader loader = new FXMLLoader(url);
+                loader.setController(new StoreController(username));
+                Parent root = loader.load();
+
                 Stage stage = new Stage();
                 stage.setTitle("Store");
                 stage.setScene(new Scene(root));

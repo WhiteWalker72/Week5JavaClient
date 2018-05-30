@@ -8,8 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import org.tempuri.IRegisterService;
-import org.tempuri.RegisterService;
+import soap.register.IRegisterService;
+import soap.register.RegisterService;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +37,6 @@ public class RegisterController {
 
     public RegisterController() {
         registerService = new RegisterService().getBasicHttpBindingIRegisterService();
-
     }
 
     public void initialize() {
